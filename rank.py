@@ -1,9 +1,7 @@
-
-
+#!/usr/bin/env python3
 
 players = ['ronan', 'manu', 'moritz']
 result = 'results.csv'
-
 
 def rank():
     standings = {}
@@ -13,7 +11,7 @@ def rank():
         for player in players:
             try:
                 score = 0
-                sc = open("%s.csv" % player, 'rt')
+                sc = open("bets/%s.csv" % player, 'rt')
                 allbet = sc.readlines()
                 for idx in range(len(allraces)):
                     riders = allbet[idx].strip().split(',')
@@ -29,6 +27,7 @@ def rank():
                             # 1 for third
                             score += (3-r)
                 standings[player] = score
+                sc.close()
             except Exception as e:
                 print('You are Fired %s' % e)
     except Exception as e:
