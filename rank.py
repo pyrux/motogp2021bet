@@ -43,5 +43,5 @@ if __name__ == "__main__":
     res = rank()
     r = sorted( ((s, p) for p, s in res.items()), reverse=True)
     for p in r:
-        print("Player %s has %s points" % (p[1], p[0]))
+        print("Player %s has %s points" % (p[1].capitalize(), p[0]))
 
