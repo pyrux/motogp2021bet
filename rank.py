@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import os
+
 players = ['ronan', 'manu', 'moritz']
 result = 'results.csv'
 
@@ -8,10 +10,10 @@ def rank():
     try:
         res = open(result, 'rt')
         allraces = res.readlines()
-        for player in players:
+        for player in os.listdir('bets/'):
             try:
                 score = 0
-                sc = open("bets/%s.csv" % player, 'rt')
+                sc = open("bets/%s" % player, 'rt')
                 allbet = sc.readlines()
                 for idx in range(len(allraces)):
                     riders = allbet[idx].strip().split(',')

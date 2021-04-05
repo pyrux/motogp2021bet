@@ -1,5 +1,6 @@
 # motogp2021bet
 
+# Put your bets in bets/{yourname}
 
 Rule of thumb :
 
