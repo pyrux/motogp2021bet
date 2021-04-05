@@ -2,7 +2,6 @@
 
 import os
 
-players = ['ronan', 'manu', 'moritz']
 result = 'results.csv'
 
 def rank():
