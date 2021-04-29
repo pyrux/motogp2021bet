@@ -18,9 +18,9 @@ def rank():
                     riders = allbet[idx].strip().split(',')
                     races = allraces[idx].strip().split(',')
                     for r in range(len(riders)):
-                        if riders[r] in races[r]:
+                        if riders[r] in races:
                             # We get one point if rider is on the podium
-                            score +=1
+                            score += 1
                         if riders[r] == races[r]:
                             # We get extra points on top if we guess the result of the rider
                             # 3 for first
@@ -28,9 +28,10 @@ def rank():
                             # 1 for third
                             score += (3-r)
                 standings[player] = score
-                sc.close()
             except Exception as e:
                 print('You are Fired %s' % e)
+            finally:
+                sc.close()
     except Exception as e:
         print('Unable to open results, try again %s' % e)
         return standings
